@@ -1,16 +1,23 @@
+//  IMPORT DE MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+//  IMPORT DE COMPONENTES
 import { AppComponent } from './app.component';
+import { ServerComponent } from './servers/server.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    //  NESTA SEÇÃO, DECLARAMOS TODOS OS COMPONENTES QUE CRIAMOS PARA O PROJETO
+    AppComponent,
+    ServerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
