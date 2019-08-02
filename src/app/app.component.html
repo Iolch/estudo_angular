@@ -1,14 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div  class="container"  style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ ServerName }}!
   </h1>
 
-  <label  for="input_name"></label>
-  <input  type="text" name="input_name" [(ngModel)]="name">
-  <p>{{name}}</p>
+  <label  for="input_ServerName">Server Name: </label>
+  <input  type="text" name="input_ServerName" [(ngModel)]="ServerName">
 
-  <!-- CHAMADA DE COMPONENTE CRIADO -->
-  <app-server></app-server>
+  <p>O {{ServerName}} está {{ServerStatus}}</p>
+  <!-- VAMOS DATABIND O BOTÃO COM UMA VARIÁVEL QUE ESTÁ EM .TS -->
+  <p *ngIf="!(allowToogle)"> preparando botão toggle...</p>
+  <button *ngIf="allowToogle" [disabled]="!allowToogle" (click)="toggleServerStatus()">toggle server status</button>
+
 </div>
 <router-outlet></router-outlet>
